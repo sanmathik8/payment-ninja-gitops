@@ -1,0 +1,6 @@
+appName: payment-ninja
+namespace: dev
+replicas: 2
+image: payment-ninja
+tag: v1
+port: 5000

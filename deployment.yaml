@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: payment-ninja
+  namespace: dev
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: payment-ninja
+  template:
+    metadata:
+      labels:
+        app: payment-ninja
+    spec:
+      containers:
+      - name: payment-ninja
+        image: payment-ninja:v1
+        ports:
+        - containerPort: 5000
