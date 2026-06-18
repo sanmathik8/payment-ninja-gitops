@@ -397,12 +397,4 @@ kubectl describe hpa payment-ninja-hpa -n dev
 | Ex 22 | HPA autoscaling | ✅ |
 
 ---
-
-## What You Learned
-
-- Docker: build image, run container, port mapping
-- Kubernetes: pods, deployments, services, namespaces
-- kind: local K8s cluster, loading images
-- Helm: templating, values, multi-env deploy
-- ArgoCD: GitOps, auto-sync, self-heal
-- HPA: CPU-based autoscaling, metrics-server
+rver
