@@ -9,7 +9,9 @@ def home():
 @app.route("/payment")
 def payment():
  return "payment done"
-
+@app.route("/health")
+def health():
+    return {"status": "UP"}
 
 if __name__=="__main__":
  app.run(host="0.0.0.0",port=5000)
