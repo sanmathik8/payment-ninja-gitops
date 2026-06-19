@@ -3,13 +3,22 @@ kind: HorizontalPodAutoscaler
 metadata:
   name: payment-ninja-hpa
   namespace: dev
+
 spec:
   scaleTargetRef:
     apiVersion: apps/v1
     kind: Deployment
     name: payment-ninja
+
   minReplicas: 2
   maxReplicas: 10
+
+  behavior:
+    scaleUp:
+      stabilizationWindowSeconds: 60
+    scaleDown:
+      stabilizationWindowSeconds: 300
+
   metrics:
   - type: Resource
     resource:
@@ -17,3 +26,10 @@ spec:
       target:
         type: Utilization
         averageUtilization: 50
+
+  - type: Resource
+    resource:
+      name: memory
+      target:
+        type: Utilization
+        averageUtilization: 70
